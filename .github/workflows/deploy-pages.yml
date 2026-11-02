@@ -24,9 +24,9 @@ jobs:
           node-version: 20
       - name: Install dependencies (npm workspaces)
         run: npm install --no-audit --no-fund --ignore-scripts
-      - name: Build xpanda-web (vite base is /xpanda/)
+      - name: Build xpanda-web (custom domain, base /)
         working-directory: packages/xpanda-web
-        run: npx vite build
+        run: npx vite build --base=/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
